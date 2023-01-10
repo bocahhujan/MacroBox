@@ -18,41 +18,28 @@ class winmain:
         self._taks = any 
         self.status = 'start'
         print(self.li)
-        #klik(100 , 100)
-        #d.keyevent('volume up')
-
-        #pilimg = d.screenshot()
-        #time.sleep(5) 
-        #pilimg.save("tmp/screenshot.jpg")
-
-        # create main window (parent window)
-        #win = tk.Tk()
+     
         self.win = ttk.Window(themename="cosmo")
-        #win.theme_use('aqua')
+
         self.win.geometry("450x650")
         self.win.resizable(False, False)
         self.win.title('Device Farm Controller')
 
-        # Label() it display box
-        # where you can put any text. 
+
 
         frm = ttk.Frame(self.win, padding=10 )
         frm.grid()
 
         txt = ttk.Label(frm,
                     text="DEVICES")
-        #txt.pack(pady=30, ipadx=20)
         txt.grid(column=0, row=0, padx=10, pady=10,  sticky='w')
 
-        # pack() It organizes the widgets
-        # in blocks before placing in the parent widget.
+
         self.combobox = ttk.Combobox(frm,state= "readonly" , bootstyle = 'success')
         self.combobox['values'] = self.li
-        #combobox.current(2)
-        #combobox.pack(pady=30, ipadx=10)
         self.combobox.grid(column=1, row=0, padx=10, pady=10,  sticky='w')
 
-        #fram combo
+ 
         self.framlbel = ttk.Labelframe( frm ,  text="Device")
         self.framlbel.grid(row=1, column=0,  padx=10, pady=10, columnspan=3, sticky="w")
 
