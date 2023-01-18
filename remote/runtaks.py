@@ -1,5 +1,6 @@
 import time
 import asyncio
+import ttkbootstrap as ttk
 
 class runTaks():
     def __init__(self , perangkat , wind, text_log):
@@ -11,7 +12,8 @@ class runTaks():
     
     def log(self , text):
         #self.text.configure(state='normal')
-        self.text.insert("1.0", f'{text} \n')
+        self.text.insert(ttk.END, f'{text} \n')
+        self.text.see(ttk.END)
         #self.text.configure(state='disabled')
         self.wind.update()
 
