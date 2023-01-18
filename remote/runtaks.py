@@ -10,9 +10,9 @@ class runTaks():
         
     
     def log(self , text):
-        self.text.configure(state='normal')
-        self.text.insert('end', f'{text} \n')
-        self.text.configure(state='disabled')
+        #self.text.configure(state='normal')
+        self.text.insert("1.0", f'{text} \n')
+        #self.text.configure(state='disabled')
         self.wind.update()
 
     def run(self):

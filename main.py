@@ -3,6 +3,8 @@ import time
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from ttkbootstrap.dialogs import Messagebox
+from ttkbootstrap.scrolled import ScrolledText
+
 from tkinter import filedialog as fd
 
 from window.createjobs import createjob
@@ -27,7 +29,7 @@ class winmain:
 
 
 
-        frm = ttk.Frame(self.win, padding=10 )
+        frm = ttk.Frame(self.win, padding=10 , width=450)
         frm.grid()
 
         txt = ttk.Label(frm,
@@ -79,21 +81,21 @@ class winmain:
 
        
 
-        framllog = ttk.Labelframe( frm ,  text="Log Job")
+        framllog = ttk.Labelframe( frm ,  text="Log Job" , width=450)
         framllog.grid(row=2, column=0,  padx=10, pady=10, columnspan=3, sticky="w")
 
         self.title_taks = ttk.Label( framllog   , text="Taks File :")
         self.title_taks.grid(column=1, row=0, padx=5, pady=5 , sticky='w')
 
 
-        scrolly = ttk.Scrollbar(framllog )
-        scrolly.grid(column=2 , row = 1 , sticky=N+S+W)
+        #scrolly = ttk.Scrollbar(framllog )
+        #scrolly.grid(column=2 , row = 1 , sticky=N+S+W)
 
-        self.text_log = ttk.Text(framllog, state='disabled', width=48, height=15 , yscrollcommand = scrolly.set)
+        #self.text_log = ttk.Text(framllog, state='disabled', width=48, height=15 , yscrollcommand = scrolly.set)
+        self.text_log = ScrolledText(framllog, padding=5, width=46, height=15, autohide=True)
         self.text_log.grid(column=1, row=1, padx=5, pady=5 , sticky='w')
 
-
-        scrolly.config(command = self.text_log.yview)
+        #scrolly.config(command = self.text_log.yview)
 
 
         for child in self.framlbel.winfo_children():
